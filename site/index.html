@@ -86,6 +86,9 @@
   footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
   footer b { font-weight: 700; }
   footer a { color: var(--trial); }
+  footer .ring-legend { list-style: none; margin: 0; padding: 0; }
+  footer .ring-legend li { margin: .25rem 0; }
+  footer .footer-note { margin: 1rem 0 0; }
 
   /* detail panel */
   #overlay { position: fixed; inset: 0; background: rgba(0,0,0,.25); display: none; }
@@ -144,11 +147,13 @@
   </div>
 
   <footer>
-    <b style="color:var(--adopt)">Adopt</b> — our default, use without further justification &nbsp;·&nbsp;
-    <b style="color:var(--trial)">Trial</b> — ready for client projects, champion involved &nbsp;·&nbsp;
-    <b style="color:var(--assess)">Assess</b> — PoCs and internal experiments only &nbsp;·&nbsp;
-    <b style="color:var(--hold)">Hold</b> — don't start anything new with this.<br>
-    Generated from the <a id="repo-link" href="#">tech-radar repository</a> — contribute via pull request.
+    <ul class="ring-legend">
+      <li><b style="color:var(--adopt)">Adopt</b> — our default, use without further justification</li>
+      <li><b style="color:var(--trial)">Trial</b> — ready for client projects, champion involved</li>
+      <li><b style="color:var(--assess)">Assess</b> — PoCs and internal experiments only</li>
+      <li><b style="color:var(--hold)">Hold</b> — don't start anything new with this</li>
+    </ul>
+    <p class="footer-note">Generated from the <a id="repo-link" href="#">tech-radar repository</a> — contribute via pull request.</p>
   </footer>
 </div>
 
