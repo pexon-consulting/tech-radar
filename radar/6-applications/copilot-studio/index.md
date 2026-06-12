@@ -13,6 +13,7 @@ articles:
   - { title: "PowerApps mit KI erweitern: RAG, Chatbot und Dokumentenanalyse", url: "https://pexon-consulting.de/blog/powerapps-ki-erweitern-rag-chatbot/", date: 2026-05 }
   - { title: "SAP MCP mit Copilot Studio: SAP-Daten per Sprache abfragen", url: "https://pexon-consulting.de/blog/sap-mcp-copilot-studio/", date: 2026-03 }
   - { title: "SAP-Daten in Copilot Studio: 30 % weniger Aufwand", url: "https://pexon-consulting.de/blog/sap-daten-copilot-studio/", date: 2026-03 }
+  - { title: "Azure AI Foundry vs Copilot: Die „Make or Buy“-Entscheidung", url: "https://pexon-consulting.de/blog/azure-ai-foundry-vs-copilot/", date: 2024-08 }
 ---
 
 ## What is it?

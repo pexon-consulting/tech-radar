@@ -12,11 +12,16 @@ articles:
   - { title: "Zero-Trust Beyond mTLS: Die Control Plane von Istio absichern", url: "https://pexon-consulting.de/blog/zero-trust-beyond-mtls-wie-wir-die-control-plane-von-istio-besser-absichern-koennen-und-sollten/", date: 2025-12 }
   - { title: "Service Mesh & Progressive Delivery: Canary-Releases, Traffic-Splitting & Safe Rollbacks", url: "https://pexon-consulting.de/blog/service-mesh-progressive-delivery-ein-deep-dive-in-canary-releases-traffic-splitting-safe-rollbacks/", date: 2025-12 }
   - { title: "Service Mesh Governance: Policies zentral durchsetzen", url: "https://pexon-consulting.de/blog/governance-im-service-mesh-einheitliche-regeln-fuer-sicherheit-compliance-durchsetzen/", date: 2025-12 }
+  - { title: "Service Mesh in bestehende Landschaften einführen, ohne den laufenden Betrieb zu gefährden", url: "https://pexon-consulting.de/blog/service-mesh-in-bestehende-landschaften-einfuehren-ohne-den-laufenden-betrieb-zu-gefaehrden/", date: 2025-12 }
+  - { title: "Sicherheit mit Service Mesh: mTLS leicht erklärt", url: "https://pexon-consulting.de/blog/sicherheit-mit-service-mesh-mtls-leicht-erklaert/", date: 2025-12 }
+  - { title: "Fünf Gründe, warum du ein Service Mesh verwenden solltest", url: "https://pexon-consulting.de/blog/fuenf-gruende-warum-du-ein-service-mesh-verwenden-solltest/", date: 2025-12 }
+  - { title: "Service Mesh erklärt: Control Plane vs. Data Plane in Kubernetes", url: "https://pexon-consulting.de/blog/control-plane-vs-data-plane-das-service-mesh-in-zwei-schichten-erklaert/", date: 2025-12 }
+  - { title: "Warum Microservices ohne Service Mesh schnell unübersichtlich werden", url: "https://pexon-consulting.de/blog/warum-microservices-ohne-service-mesh-schnell-unuebersichtlich-werden/", date: 2025-12 }
 ---
 
 ## What is it?
 
-Service mesh for Kubernetes — mTLS between services, traffic management (canary, splitting, rollbacks) and centrally enforced policies. We published a nine-part series on it; the four most substantial posts are linked here.
+Service mesh for Kubernetes — mTLS between services, traffic management (canary, splitting, rollbacks) and centrally enforced policies. Our complete nine-part series is linked below.
 
 ## Why this ring?
 

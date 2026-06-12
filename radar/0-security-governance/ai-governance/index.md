@@ -11,6 +11,9 @@ articles:
   - { title: "Externes KI Governance Board: EU AI Act-konform ab 2026", url: "https://pexon-consulting.de/blog/externes-ki-governance-board/", date: 2026-04 }
   - { title: "Private AI im Banking und Versicherung: KI-Plattform unter DORA, BAIT und EU AI Act", url: "https://pexon-consulting.de/blog/private-ai-banking-versicherung/", date: 2026-04 }
   - { title: "Private AI Governance: SSO, Audit Logs und Compliance für Self-Hosted LLMs", url: "https://pexon-consulting.de/blog/private-ai-governance-sso-audit-compliance/", date: 2026-03 }
+  - { title: "Generative KI Reifegradanalyse: Ein Leitfaden für IT-Leiter und Geschäftsführer", url: "https://pexon-consulting.de/blog/generative-ki-reifegradanalyse-ein-leitfaden-fuer-it-leiter-und-geschaeftsfuehrer/", date: 2025-02 }
+  - { title: "Generative AI im Gesundheitswesen — Anonymisierung und Pseudonymisierung hochsensibler Daten", url: "https://pexon-consulting.de/blog/generative-ai-im-gesundheitswesen-anonymisierung/", date: 2024-10 }
+  - { title: "Datensicherheit bei der KI-Implementierung: Azure, On-Prem, DSGVO", url: "https://pexon-consulting.de/blog/ki-implementierung-datensicherheit/", date: 2024-09 }
 ---
 
 ## What is it?

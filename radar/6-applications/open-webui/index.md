@@ -14,6 +14,7 @@ articles:
   - { title: "LibreChat vs Open WebUI: Self-Hosted KI-Chat im Vergleich", url: "https://pexon-consulting.de/blog/librechat-vs-open-webui/", date: 2026-03 }
   - { title: "Open WebUI Guide: Die beste Benutzeroberfläche für lokale KI-Modelle einrichten", url: "https://pexon-consulting.de/blog/private-ai-ollama-open-webui-ubuntu-installieren/", date: 2026-03 }
   - { title: "Open Source AI Chatbot: 5 Plattformen im Enterprise-Vergleich", url: "https://pexon-consulting.de/blog/open-source-ai-chatbot/", date: 2026-01 }
+  - { title: "Open WebUI auf Azure: Der komplette Leitfaden 2026", url: "https://pexon-consulting.de/blog/open-webui-auf-azure-der-komplette-leitfaden/", date: 2025-11 }
 ---
 
 ## What is it?

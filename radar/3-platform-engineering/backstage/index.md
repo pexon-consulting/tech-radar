@@ -11,6 +11,7 @@ references:
   - { client: "Globaler Automobilzulieferer", title: "Internal Developer Platform auf Azure und AWS", url: "https://pexon-consulting.de/casestudie/entwicklerplattform-fuer-globalen-automobilzulieferer-internal-developer-platform-auf-azure-und-aws/", public: true }
 articles:
   - { title: "Internal Developer Platform für globalen Automobilzulieferer: Azure + AWS", url: "https://pexon-consulting.de/blog/internal-developer-platform-automobilzulieferer-azure-aws/", date: 2026-05 }
+  - { title: "IDP — Schnell, sicher, compliant: Warum Internal Developer Platforms ein Muss sind", url: "https://pexon-consulting.de/blog/idp-warum-internal-developer-platforms-ein-muss-in-2025-sind/", date: 2025-05 }
 ---
 
 ## What is it?

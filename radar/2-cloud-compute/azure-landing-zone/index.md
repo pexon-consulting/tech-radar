@@ -14,6 +14,9 @@ references:
   - { client: "Enterprise-Kunde", title: "Landingzone-Initiative: strukturierte Azure-Governance", url: "https://pexon-consulting.de/casestudie/landingzone-initiative-strukturierte-azure-governance-und-automatisierte-infrastrukturprozesse/", public: true }
   - { client: "Lebensmitteleinzelhändler", title: "Azure-Architektur, Landing Zone und Applikationsmigration", url: "https://pexon-consulting.de/casestudie/case-study-azure-landing-zone-food-retail/", public: true }
   - { client: "Industrieversicherer", title: "Sicherheit & Compliance — zentrales Azure-Plattform-Team", url: "https://pexon-consulting.de/casestudie/insurance-sicherheit-und-compliance/", public: true }
+articles:
+  - { title: "Azure Governance: So behalten Mittelständler die Kontrolle über ihre Cloud", url: "https://pexon-consulting.de/blog/azure-governance/", date: 2025-12 }
+  - { title: "Azure Zertifizierungen und Karrierewege: Der strategische Leitfaden für IT-Profis", url: "https://pexon-consulting.de/blog/azure-zertifizierungen-leitfaden/", date: 2025-02 }
 ---
 
 ## What is it?

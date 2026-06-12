@@ -7,6 +7,8 @@ champions: []
 since: 2026-06
 ring_history:
   - { ring: trial, date: 2026-06, reason: "Radar expansion — document parsing for RAG ingestion pipelines" }
+articles:
+  - { title: "Endlich durchgeblickt: Table Extraction richtig evaluieren", url: "https://pexon-consulting.de/blog/blog-endlich-durchgeblickt-table-extraction-richtig-evaluieren/", date: 2025-12 }
 ---
 
 ## What is it?

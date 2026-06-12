@@ -15,6 +15,8 @@ articles:
   - { title: "Azure OpenAI Datenschutz: FAQ für Unternehmen 2026", url: "https://pexon-consulting.de/blog/azure-openai-datenschutz-faq/", date: 2026-06 }
   - { title: "Azure AI Foundry Tutorial: Erste KI-App in 60 Minuten", url: "https://pexon-consulting.de/blog/azure-ai-foundry-tutorial-deutsch/", date: 2026-04 }
   - { title: "Azure AI Foundry: Der komplette Leitfaden für 2026", url: "https://pexon-consulting.de/blog/azure-ai-foundry-leitfaden/", date: 2026-03 }
+  - { title: "Azure OpenAI in EU Data Zones: Garantierte Datensouveränität für Unternehmen", url: "https://pexon-consulting.de/blog/azure-openai-eu-data-zones-garantierte-datensouveraenitaet/", date: 2025-03 }
+  - { title: "Azure AI PTU im Azure OpenAI Service: Ein umfassender Leitfaden", url: "https://pexon-consulting.de/blog/azure-ai-ptu/", date: 2024-12 }
 ---
 
 ## What is it?

@@ -10,6 +10,7 @@ ring_history:
 articles:
   - { title: "OWASP LLM Top 10: Prompt Injection Defense für deutsche Unternehmen", url: "https://pexon-consulting.de/blog/owasp-llm-top-10-prompt-injection-defense-dach/", date: 2026-05 }
   - { title: "Indirect Prompt Injection in RAG-Systemen: Wenn Dokumente den Agent übernehmen", url: "https://pexon-consulting.de/blog/indirect-prompt-injection-rag-systeme/", date: 2026-05 }
+  - { title: "Azure AI Content Safety: Kurzüberblick — Features für eigene KI-Anwendungen", url: "https://pexon-consulting.de/blog/azure-ai-content-safety/", date: 2025-03 }
 ---
 
 ## What is it?

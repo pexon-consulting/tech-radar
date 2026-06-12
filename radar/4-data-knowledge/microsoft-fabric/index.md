@@ -17,6 +17,10 @@ articles:
   - { title: "Pilotprojekt Datenplattform mit Microsoft Fabric: Risikoarm starten", url: "https://pexon-consulting.de/blog/pilotprojekt-datenplattform-microsoft-fabric/", date: 2026-06 }
   - { title: "Databricks vs Fabric: Welches Tool passt 2026?", url: "https://pexon-consulting.de/blog/databricks-vs-microsoft-fabric-analytics-tool/", date: 2026-06 }
   - { title: "Data Quality Agent: KI-gestützte Datenqualität in Fabric", url: "https://pexon-consulting.de/blog/data-quality-agent-microsoft-fabric/", date: 2026-05 }
+  - { title: "Databricks vs. Microsoft Fabric: Ehrlicher Vergleich 2026", url: "https://pexon-consulting.de/blog/databricks-vs-microsoft-fabric/", date: 2025-09 }
+  - { title: "Warum Microsoft Fabric: 30 Fragen von Kunden zur Einführung", url: "https://pexon-consulting.de/blog/warum-microsoft-fabric-30-fragen/", date: 2025-02 }
+  - { title: "Microsoft Fabric & Power BI Lizenzen (2026): Kosten sparen mit dem richtigen Modell", url: "https://pexon-consulting.de/blog/microsoft-fabric-und-power-bi-lizenzierungsleitfaden/", date: 2025-02 }
+  - { title: "KI-gestützte Datenaufbereitung in Microsoft Fabric: Vom Chaos zur Wertschöpfung", url: "https://pexon-consulting.de/blog/ki-gestuetzte-datenaufbereitung-in-microsoft-fabric-vom-chaos-zur-wertschoepfung/", date: 2025-02 }
 ---
 
 ## What is it?

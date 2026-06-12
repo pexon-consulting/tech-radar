@@ -15,6 +15,7 @@ references:
   - { client: "Mittelständler", title: "IT-Modernisierung mit Azure Virtual Desktop und Terraform", url: "https://pexon-consulting.de/casestudie/it-modernisierung-azure-cloud-migration-effiziente-infrastruktur-mit-azure-virtual-desktop-und-terraform/", public: true }
 articles:
   - { title: "OpenTofu vs. Terraform vs. Pulumi: IaC-Vergleich 2026", url: "https://pexon-consulting.de/blog/opentofu-terraform-pulumi-vergleich/", date: 2026-03 }
+  - { title: "OpenTofu statt Terraform: Der strategische Weg zu echter Open Source", url: "https://pexon-consulting.de/blog/opentofu-statt-terraform-der-strategische-weg-zu-echter-open-source/", date: 2025-12 }
 ---
 
 ## What is it?
