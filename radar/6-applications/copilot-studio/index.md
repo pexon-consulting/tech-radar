@@ -2,7 +2,7 @@
 name: Microsoft Copilot Studio & Power Platform
 layer: 6-applications
 ring: trial
-tags: [low-code, microsoft, copilot, powerapps, sap]
+tags: [low-code, microsoft, copilot, powerapps, power-automate, sap]
 champions: []
 since: 2026-06
 ring_history:
@@ -18,7 +18,7 @@ articles:
 
 ## What is it?
 
-Microsoft's low-code stack for departmental AI apps and copilots — Copilot Studio for conversational agents, PowerApps for forms-and-workflow apps, with connectors into SAP, SharePoint and ServiceNow.
+Microsoft's low-code stack for departmental AI apps and copilots — Copilot Studio for conversational agents, PowerApps for forms-and-workflow apps, Power Automate for user-owned automation flows, with connectors into SAP, SharePoint and ServiceNow.
 
 ## Why this ring?
 

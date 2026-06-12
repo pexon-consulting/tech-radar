@@ -30,7 +30,7 @@ The pragmatic default when the client already runs Postgres: one less system, tr
 
 ## Lessons learned
 
--
+- Index updates eat memory: HNSW (re)builds consume substantial RAM (`maintenance_work_mem`) and load on the shared Postgres instance — on corpora with frequent re-embedding this hurts the operational database. Plan index maintenance windows, or pick a dedicated retrieval service (→ Azure AI Search, Qdrant) for update-heavy corpora.
 
 ## Resources
 
