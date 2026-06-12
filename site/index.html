@@ -125,7 +125,6 @@
   #detail .soft { color: var(--muted); }
   #detail .history a { color: var(--trial); text-decoration: none; }
   #detail .history a:hover { text-decoration: underline; }
-  .legend li .ref-mark { color: var(--muted); font-size: .75rem; margin-left: auto; padding-left: .5rem; flex: none; align-self: center; }
 
   @media (max-width: 980px) {
     .layout { grid-template-columns: 1fr; }
@@ -298,11 +297,9 @@ function buildLegend(container) {
     for (const entry of entries.filter(e => e.layer === layerId)) {
       const li = document.createElement("li");
       li.dataset.slug = entry.slug;
-      const refCount = (entry.references || []).length;
       li.innerHTML = `<span class="num">${entry.num}</span>` +
                      `<span class="dot" style="background:${ringById[entry.ring].color}"></span>` +
-                     `<span>${entry.name}</span>` +
-                     (refCount ? `<span class="ref-mark" title="${refCount} public case stud${refCount > 1 ? "ies" : "y"}">📄 ${refCount}</span>` : "");
+                     `<span>${entry.name}</span>`;
       li.addEventListener("click", () => openDetail(entry));
       li.addEventListener("mouseenter", () => setHot(entry.slug, true));
       li.addEventListener("mouseleave", () => setHot(entry.slug, false));
