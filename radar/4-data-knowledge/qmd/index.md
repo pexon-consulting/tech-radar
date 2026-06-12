@@ -3,7 +3,7 @@ name: qmd
 layer: 4-data-knowledge
 ring: assess
 tags: [semantic-search, cli, prototyping]
-champions: [phillip]
+champions: [phillip.pham]
 since: 2026-06
 ring_history:
   - { ring: assess, date: 2026-06, reason: "Initial radar import — prototyping tool, not production retrieval" }
