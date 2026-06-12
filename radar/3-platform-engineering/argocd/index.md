@@ -9,6 +9,8 @@ ring_history:
   - { ring: adopt, date: 2026-06, reason: "Radar expansion — GitOps default for K8s deployments" }
 certifications:
   - { name: "CAPA — Certified Argo Project Associate", issuer: "CNCF", holders: [] }
+articles:
+  - { title: "ArgoCD auf AKS: GitOps für Azure Kubernetes in der Praxis", url: "https://pexon-consulting.de/blog/argocd-aks-gitops-kubernetes/", date: 2026-05 }
 ---
 
 ## What is it?

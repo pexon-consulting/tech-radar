@@ -10,6 +10,7 @@ ring_history:
 articles:
   - { title: "Structured Tool Calling mit PydanticAI: Validierung statt Halluzinationen", url: "https://pexon-consulting.de/blog/pydanticai-tool-calling-halluzinationen/", date: 2026-05 }
   - { title: "PydanticAI vs LangChain: Welches Agent Framework für Enterprise?", url: "https://pexon-consulting.de/blog/pydanticai-vs-langchain-enterprise-agent-framework/", date: 2026-05 }
+  - { title: "PydanticAI + FastAPI: Production-Ready KI-Services mit Validation", url: "https://pexon-consulting.de/blog/pydanticai-fastapi-production-ki-services/", date: 2026-05 }
 ---
 
 ## What is it?

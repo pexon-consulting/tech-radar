@@ -9,6 +9,9 @@ ring_history:
   - { ring: adopt, date: 2026-06, reason: "Initial radar import — Pexon default for sovereign/on-prem inference" }
 references:
   - { client: "Rku IT", title: "Open-Source-LLM (LLaMA) mit RAG für First-Level-Support-Automation", url: "https://pexon-consulting.de/casestudie/rku-genai-und-llm/", public: true }
+articles:
+  - { title: "SGLang vs vLLM: Welche Inference Engine spart GPU-Kosten?", url: "https://pexon-consulting.de/blog/sglang-vs-vllm/", date: 2026-04 }
+  - { title: "Open Source KI für Unternehmen: Llama, Mistral, DeepSeek im Enterprise-Einsatz", url: "https://pexon-consulting.de/blog/open-source-ki-fuer-unternehmen/", date: 2026-01 }
 ---
 
 ## What is it?

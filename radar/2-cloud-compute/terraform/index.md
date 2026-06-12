@@ -13,6 +13,8 @@ references:
   - { client: "Mittelständler", title: "Cloud-Infrastrukturmodernisierung mit Terraform & OpenTofu", url: "https://pexon-consulting.de/casestudie/cloud-infrastrukturmodernisierung-abbau-technischer-schulden-durch-terraform-opentofu-automatisierte-cloud-plattformen/", public: true }
   - { client: "Enterprise-Kunde", title: "Aufbau einer Azure-Datenplattform (Terraform, Hub-and-Spoke)", url: "https://pexon-consulting.de/casestudie/aufbau-einer-azure-datenplattform/", public: true }
   - { client: "Mittelständler", title: "IT-Modernisierung mit Azure Virtual Desktop und Terraform", url: "https://pexon-consulting.de/casestudie/it-modernisierung-azure-cloud-migration-effiziente-infrastruktur-mit-azure-virtual-desktop-und-terraform/", public: true }
+articles:
+  - { title: "OpenTofu vs. Terraform vs. Pulumi: IaC-Vergleich 2026", url: "https://pexon-consulting.de/blog/opentofu-terraform-pulumi-vergleich/", date: 2026-03 }
 ---
 
 ## What is it?

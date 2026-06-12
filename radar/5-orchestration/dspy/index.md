@@ -9,6 +9,7 @@ ring_history:
   - { ring: assess, date: 2026-06, reason: "Added from blog coverage — May 2026 post, no radar entry yet" }
 articles:
   - { title: "RAG Pipelines mit DSPy statt LangChain: Messbar bessere Antworten", url: "https://pexon-consulting.de/blog/rag-pipelines-dspy-langchain-vergleich/", date: 2026-05 }
+  - { title: "DSPy Production: Vom Notebook zum Enterprise KI-Service", url: "https://pexon-consulting.de/blog/dspy-production-notebook-enterprise-service/", date: 2026-05 }
 ---
 
 ## What is it?

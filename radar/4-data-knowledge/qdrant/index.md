@@ -7,6 +7,8 @@ champions: []
 since: 2026-06
 ring_history:
   - { ring: adopt, date: 2026-06, reason: "Initial radar import — preferred vector DB for sovereign setups" }
+articles:
+  - { title: "Vektordatenbanken Vergleich: 8 Lösungen für Unternehmen [2026]", url: "https://pexon-consulting.de/blog/vektordatenbanken-vergleich-unternehmen/", date: 2026-04 }
 ---
 
 ## What is it?

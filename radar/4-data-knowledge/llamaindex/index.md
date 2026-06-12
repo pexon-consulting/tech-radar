@@ -10,6 +10,7 @@ ring_history:
 articles:
   - { title: "Private RAG mit LlamaIndex: On-Premise ohne Cloud-Lock-in", url: "https://pexon-consulting.de/blog/private-rag-llamaindex-on-premise/", date: 2026-05 }
   - { title: "Multimodale RAG mit LlamaIndex: ISO-Normen & CAD durchsuchbar", url: "https://pexon-consulting.de/blog/multimodale-rag-llamaindex-iso-normen-cad/", date: 2026-05 }
+  - { title: "Standard RAG Grenzen: Warum PDF-Chat bei DIN-Normen scheitert", url: "https://pexon-consulting.de/blog/standard-rag-grenzen-technische-dokumente/", date: 2026-04 }
 ---
 
 ## What is it?

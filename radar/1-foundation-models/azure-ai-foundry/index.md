@@ -13,6 +13,8 @@ references:
   - { client: "Currenta", title: "AI Agents für Chemie & Pharma — Azure OpenAI RAG, Roadmap bis MVP", url: "https://pexon-consulting.de/casestudie/ai-agents-bei-currenta-vom-workshop-zur-umsetzungs-roadmap/", public: true }
 articles:
   - { title: "Azure OpenAI Datenschutz: FAQ für Unternehmen 2026", url: "https://pexon-consulting.de/blog/azure-openai-datenschutz-faq/", date: 2026-06 }
+  - { title: "Azure AI Foundry Tutorial: Erste KI-App in 60 Minuten", url: "https://pexon-consulting.de/blog/azure-ai-foundry-tutorial-deutsch/", date: 2026-04 }
+  - { title: "Azure AI Foundry: Der komplette Leitfaden für 2026", url: "https://pexon-consulting.de/blog/azure-ai-foundry-leitfaden/", date: 2026-03 }
 ---
 
 ## What is it?

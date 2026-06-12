@@ -16,6 +16,7 @@ references:
 articles:
   - { title: "Pilotprojekt Datenplattform mit Microsoft Fabric: Risikoarm starten", url: "https://pexon-consulting.de/blog/pilotprojekt-datenplattform-microsoft-fabric/", date: 2026-06 }
   - { title: "Databricks vs Fabric: Welches Tool passt 2026?", url: "https://pexon-consulting.de/blog/databricks-vs-microsoft-fabric-analytics-tool/", date: 2026-06 }
+  - { title: "Data Quality Agent: KI-gestützte Datenqualität in Fabric", url: "https://pexon-consulting.de/blog/data-quality-agent-microsoft-fabric/", date: 2026-05 }
 ---
 
 ## What is it?

@@ -7,6 +7,8 @@ champions: []
 since: 2026-06
 ring_history:
   - { ring: trial, date: 2026-06, reason: "Radar expansion — low-code automation with AI nodes, self-hostable, German vendor" }
+articles:
+  - { title: "n8n + Active Directory: User Provisioning automatisieren (Tutorial)", url: "https://pexon-consulting.de/blog/n8n-active-directory-user-provisioning/", date: 2026-05 }
 ---
 
 ## What is it?

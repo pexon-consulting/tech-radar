@@ -10,6 +10,10 @@ ring_history:
 articles:
   - { title: "MCP Tool Poisoning: Wie deutsche Unternehmen Agent-Pipelines absichern", url: "https://pexon-consulting.de/blog/mcp-tool-poisoning-agent-pipelines-absichern/", date: 2026-06 }
   - { title: "LLM Agent Sandboxing: Wie MCP, Tool Permissions und DSGVO zusammenpassen", url: "https://pexon-consulting.de/blog/llm-agent-sandboxing-mcp-dsgvo/", date: 2026-05 }
+  - { title: "MCP Registry: Eigene Subregistry für Enterprise IT?", url: "https://pexon-consulting.de/blog/mcp-registry-enterprise-subregistry/", date: 2026-04 }
+  - { title: "MCP vs API vs iPaaS: Welcher Ansatz passt 2026?", url: "https://pexon-consulting.de/blog/mcp-vs-api-vs-ipaas/", date: 2026-03 }
+  - { title: "KI-Integration zu Datenquellen: Das USB-C für KI — warum der Mittelstand es 2026 braucht", url: "https://pexon-consulting.de/blog/ki-integration-zu-datenquellen/", date: 2026-02 }
+  - { title: "MCP Server für Google Drive: KI-gesteuerte Dokumentenautomatisierung 2026", url: "https://pexon-consulting.de/blog/mcp-server-fuer-googledrive/", date: 2026-01 }
 ---
 
 ## What is it?

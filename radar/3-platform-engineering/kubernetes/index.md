@@ -18,6 +18,7 @@ references:
   - { client: "AOK", title: "DevOps-Automatisierung in AWS und OpenShift", url: "https://pexon-consulting.de/casestudie/aok/", public: true }
 articles:
   - { title: "Kubernetes Security Hardening: 32-Punkte-Checkliste für Production", url: "https://pexon-consulting.de/blog/kubernetes-security-hardening-checkliste/", date: 2026-06 }
+  - { title: "Kubernetes Migration: Von VMs zu Containern [Leitfaden 2026]", url: "https://pexon-consulting.de/blog/kubernetes-migration-vms-container/", date: 2026-04 }
 ---
 
 ## What is it?

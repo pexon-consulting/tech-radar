@@ -11,6 +11,7 @@ articles:
   - { title: "LLM-Kosten kontrollieren mit LangFuse: Token-Tracking für Enterprise", url: "https://pexon-consulting.de/blog/llm-kosten-langfuse-token-tracking-finops/", date: 2026-05 }
   - { title: "LangFuse vs LangSmith vs Helicone: LLM Observability Vergleich 2026", url: "https://pexon-consulting.de/blog/langfuse-vs-langsmith-helicone-observability-vergleich/", date: 2026-05 }
   - { title: "LangFuse Self-Hosted auf Azure: DSGVO-konformes LLM-Monitoring", url: "https://pexon-consulting.de/blog/langfuse-self-hosted-azure-dsgvo/", date: 2026-05 }
+  - { title: "LLM Observability mit Langfuse: Tracing für AI-Act-ready Systeme", url: "https://pexon-consulting.de/blog/llm-observability-langfuse-tracing-guardrails/", date: 2026-04 }
 ---
 
 ## What is it?

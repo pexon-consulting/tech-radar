@@ -9,6 +9,8 @@ ring_history:
   - { ring: trial, date: 2026-06, reason: "Initial radar import — gateway component of our AI platform setups" }
 articles:
   - { title: "LLM Gateway 4er-Vergleich: LiteLLM, Portkey, Helicone und Kong", url: "https://pexon-consulting.de/blog/llm-gateway-4er-vergleich-kong-ai-gateway/", date: 2026-06 }
+  - { title: "LiteLLM vs OpenRouter: Welches LLM-Gateway passt zu Ihrem Unternehmen?", url: "https://pexon-consulting.de/blog/litellm-vs-openrouter/", date: 2026-04 }
+  - { title: "LiteLLM Multi-Model Routing: Anleitung für ein sicheres Enterprise-Setup", url: "https://pexon-consulting.de/blog/litellm-anleitung-deutsch-enterprise-setup/", date: 2026-03 }
 ---
 
 ## What is it?
