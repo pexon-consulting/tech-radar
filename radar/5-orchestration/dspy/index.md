@@ -3,7 +3,7 @@ name: DSPy
 layer: 5-orchestration
 ring: assess
 tags: [prompt-optimization, llm-pipelines, python]
-champions: []
+champions: [christoph.gotschlich]
 since: 2026-06
 ring_history:
   - { ring: assess, date: 2026-06, reason: "Added from blog coverage — May 2026 post, no radar entry yet" }
