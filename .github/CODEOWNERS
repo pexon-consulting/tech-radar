@@ -1,0 +1,13 @@
+# Layer owners — review new entries and ring changes in their layer.
+# TODO: replace with real GitHub teams/users per layer before announcing the radar.
+#
+# radar/1-foundation-models/      @pexon-consulting/ai-engineering
+# radar/2-cloud-compute/          @pexon-consulting/cloud-foundation
+# radar/3-platform-engineering/   @pexon-consulting/platform
+# radar/4-data-knowledge/         @pexon-consulting/data
+# radar/5-orchestration/          @pexon-consulting/ai-engineering
+# radar/6-applications/           @pexon-consulting/ai-engineering
+# radar/0-security-governance/    @pexon-consulting/security
+#
+# Tooling and process changes:
+# scripts/ .github/ site/ GOVERNANCE.md  @pexon-consulting/tech-radar-maintainers

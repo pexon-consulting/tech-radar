@@ -1,0 +1,40 @@
+name: New technology
+description: Propose a technology for the radar (starts in Assess)
+title: "[Radar] Add <technology>"
+labels: [radar, new-entry]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Technology
+      placeholder: e.g. Temporal
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Home layer
+      options:
+        - 1-foundation-models
+        - 2-cloud-compute
+        - 3-platform-engineering
+        - 4-data-knowledge
+        - 5-orchestration
+        - 6-applications
+        - 0-security-governance
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should we look at it?
+      description: What problem does it solve for us? Who would use it?
+    validations:
+      required: true
+  - type: input
+    id: champion
+    attributes:
+      label: Champion
+      description: Who drives the evaluation? (can be you)
+    validations:
+      required: true

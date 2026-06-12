@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pexon Tech Radar</title>
+<style>
+  :root {
+    --text: #262626;
+    --muted: #8c8c8c;
+    --line: #e8e8e8;
+    --adopt: #5ba300;
+    --trial: #0083bf;
+    --assess: #e09b00;
+    --hold: #d62015;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: #fff; color: var(--text);
+    font: 15px/1.55 -apple-system, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
+  }
+  .page { max-width: 1280px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+
+  header h1 { margin: 0; font-size: 1.9rem; font-weight: 700; letter-spacing: -.02em; }
+  header p  { margin: .3rem 0 0; color: var(--muted); }
+
+  .controls { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; margin: 1.6rem 0 .5rem; }
+  .ring-toggle {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-size: .85rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    cursor: pointer; user-select: none; color: var(--text);
+  }
+  .ring-toggle input { display: none; }
+  .ring-toggle .swatch {
+    width: .8rem; height: .8rem; border-radius: 50%; background: var(--c);
+    transition: opacity .15s;
+  }
+  .ring-toggle.off { color: var(--muted); }
+  .ring-toggle.off .swatch { opacity: .25; }
+  #search {
+    margin-left: auto; padding: .5rem .9rem; min-width: 240px;
+    border: 1px solid var(--line); border-radius: 8px; font-size: .9rem; color: var(--text);
+    outline: none;
+  }
+  #search:focus { border-color: #bdbdbd; }
+
+  .layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, 1fr); gap: 2.5rem; align-items: start; }
+  .radar-wrap { position: sticky; top: 1rem; }
+  svg { width: 100%; height: auto; display: block; }
+
+  text.ring-label {
+    font-size: 15px; font-weight: 800; letter-spacing: .12em; text-anchor: middle;
+    fill: #bdbdbd; paint-order: stroke; stroke: #fff; stroke-width: 5px;
+  }
+  text.sector-label {
+    font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-anchor: middle;
+    fill: var(--muted); text-transform: uppercase;
+  }
+  g.blip { cursor: pointer; }
+  g.blip circle { transition: opacity .15s; }
+  g.blip text {
+    font-size: 10.5px; font-weight: 700; fill: #fff; text-anchor: middle; dominant-baseline: central;
+    pointer-events: none;
+  }
+  g.blip.dim { opacity: .12; pointer-events: none; }
+  g.blip.hot circle { stroke: var(--text); stroke-width: 2.5; }
+
+  .legend { display: grid; grid-template-columns: 1fr; gap: 1.3rem; }
+  .legend section h2 {
+    margin: 0 0 .4rem; font-size: .78rem; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--line); padding-bottom: .35rem;
+  }
+  .legend ol { list-style: none; margin: 0; padding: 0; }
+  .legend li {
+    display: flex; align-items: flex-start; gap: .55rem;
+    padding: .22rem .35rem; border-radius: 6px; cursor: pointer; font-size: .92rem;
+  }
+  .legend li:hover, .legend li.hot { background: #f4f4f4; }
+  .legend li.dim { opacity: .3; }
+  .legend li .num { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; min-width: 1.4em; text-align: right; }
+  .legend li .num { margin-top: .1rem; }
+  .legend li .dot { width: .55rem; height: .55rem; border-radius: 50%; flex: none; margin-top: .45rem; }
+
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+  footer b { font-weight: 700; }
+  footer a { color: var(--trial); }
+
+  /* detail panel */
+  #overlay { position: fixed; inset: 0; background: rgba(0,0,0,.25); display: none; }
+  #detail {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(400px, 92vw);
+    background: #fff; box-shadow: -8px 0 30px rgba(0,0,0,.12);
+    transform: translateX(105%); transition: transform .22s ease; padding: 1.8rem; overflow-y: auto;
+  }
+  body.detail-open #overlay { display: block; }
+  body.detail-open #detail { transform: none; }
+  #detail .close {
+    position: absolute; top: 1rem; right: 1rem; border: none; background: none;
+    font-size: 1.4rem; color: var(--muted); cursor: pointer; line-height: 1;
+  }
+  #detail h3 { margin: 0 0 .4rem; font-size: 1.3rem; letter-spacing: -.01em; padding-right: 1.5rem; }
+  #detail .badge {
+    display: inline-block; padding: .18rem .6rem; border-radius: 999px;
+    color: #fff; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  }
+  #detail dl { margin: 1.2rem 0; }
+  #detail dt { font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-top: .9rem; }
+  #detail dd { margin: .15rem 0 0; }
+  #detail .history { margin: .2rem 0 0; padding-left: 1.1rem; font-size: .88rem; color: var(--text); }
+  #detail .history li { margin: .15rem 0; }
+  #detail .gh {
+    display: inline-block; margin-top: 1.4rem; padding: .55rem 1rem; border-radius: 8px;
+    background: var(--text); color: #fff; text-decoration: none; font-size: .88rem; font-weight: 600;
+  }
+  .tag { display: inline-block; background: #f1f1f1; border-radius: 5px; padding: .08rem .45rem; font-size: .8rem; margin: .12rem .25rem .12rem 0; }
+  #detail .desc { margin: .9rem 0 0; color: var(--text); }
+  #detail .soft { color: var(--muted); }
+  #detail .history a { color: var(--trial); text-decoration: none; }
+  #detail .history a:hover { text-decoration: underline; }
+  .legend li .ref-mark { color: var(--muted); font-size: .75rem; margin-left: auto; padding-left: .5rem; flex: none; align-self: center; }
+
+  @media (max-width: 980px) {
+    .layout { grid-template-columns: 1fr; }
+    .radar-wrap { position: static; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Pexon Tech Radar</h1>
+    <p>The Pexon AI Engineering Stack — what we adopt, trial, assess, and hold. Click any technology for details.</p>
+  </header>
+
+  <div class="controls" id="controls">
+    <input id="search" type="search" placeholder="Filter by name or tag…">
+  </div>
+
+  <div class="layout">
+    <div class="radar-wrap"><svg id="radar" viewBox="0 0 980 890" role="img" aria-label="Pexon tech radar"></svg></div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <footer>
+    <b style="color:var(--adopt)">Adopt</b> — our default, use without further justification &nbsp;·&nbsp;
+    <b style="color:var(--trial)">Trial</b> — ready for client projects, champion involved &nbsp;·&nbsp;
+    <b style="color:var(--assess)">Assess</b> — PoCs and internal experiments only &nbsp;·&nbsp;
+    <b style="color:var(--hold)">Hold</b> — don't start anything new with this.<br>
+    Generated from the <a id="repo-link" href="#">tech-radar repository</a> — contribute via pull request.
+  </footer>
+</div>
+
+<div id="overlay"></div>
+<aside id="detail" aria-label="Technology details"><button class="close" aria-label="Close">×</button><div id="detail-body"></div></aside>
+
+<script>
+"use strict";
+const REPO_URL = "https://github.com/pexon-consulting/tech-radar";
+document.getElementById("repo-link").href = REPO_URL;
+
+const SVGNS = "http://www.w3.org/2000/svg";
+const SIZE = 980, CX = 490, CY = 445;
+const RINGS = [
+  { id: "adopt",  label: "ADOPT",  color: "#5ba300", r0: 0,   r1: 150 },
+  { id: "trial",  label: "TRIAL",  color: "#0083bf", r0: 150, r1: 235 },
+  { id: "assess", label: "ASSESS", color: "#e09b00", r0: 235, r1: 305 },
+  { id: "hold",   label: "HOLD",   color: "#d62015", r0: 305, r1: 365 },
+];
+const SHORT_TITLES = {
+  "1-foundation-models":    "1 · Foundation Models",
+  "2-cloud-compute":        "2 · Cloud & Compute",
+  "3-platform-engineering": "3 · Platform Engineering",
+  "4-data-knowledge":       "4 · Data & Knowledge",
+  "5-orchestration":        "5 · Agent Hub & MCP",
+  "6-applications":         "6 · Applications",
+  "0-security-governance":  "Security & Governance",
+};
+// clockwise from the top
+const SECTOR_ORDER = [
+  "1-foundation-models", "2-cloud-compute", "3-platform-engineering",
+  "4-data-knowledge", "5-orchestration", "6-applications", "0-security-governance",
+];
+
+const state = { rings: new Set(RINGS.map(r => r.id)), query: "" };
+let entries = [];
+
+const ringById = Object.fromEntries(RINGS.map(r => [r.id, r]));
+const ringRank = Object.fromEntries(RINGS.map((r, i) => [r.id, i]));
+const deg2rad = d => (d * Math.PI) / 180;
+const polar = (r, angleDeg) => {
+  const a = deg2rad(angleDeg);
+  return [CX + r * Math.cos(a), CY + r * Math.sin(a)];
+};
+function el(name, attrs, parent) {
+  const node = document.createElementNS(SVGNS, name);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  if (parent) parent.appendChild(node);
+  return node;
+}
+
+// --- blip placement: evenly spaced arcs inside a (sector, ring) cell -------
+function blipPositions(count, a0, a1, r0, r1) {
+  const BLIP = 17;                       // blip radius incl. breathing room
+  const padA = 4.5;                      // angular padding (deg)
+  const innerA = a0 + padA, outerA = a1 - padA;
+  const padR = Math.min(22, (r1 - r0) / 3);
+  const rLow = Math.max(r0 + padR, 40);  // keep out of the very center
+  const rHigh = r1 - padR;
+  const capacity = r => Math.max(1, Math.floor((deg2rad(outerA - innerA) * r) / (BLIP * 2.3)));
+
+  let rows = 1;
+  while (rows < 4) {
+    let cap = 0;
+    for (let j = 0; j < rows; j++) cap += capacity(rLow + ((j + 0.5) / rows) * (rHigh - rLow));
+    if (cap >= count) break;
+    rows++;
+  }
+  const positions = [];
+  let remaining = count;
+  for (let j = 0; j < rows && remaining > 0; j++) {
+    const r = rows === 1 ? (rLow + rHigh) / 2 : rLow + ((j + 0.5) / rows) * (rHigh - rLow);
+    const inRow = Math.min(remaining, Math.ceil(count / rows));
+    for (let k = 0; k < inRow; k++) {
+      const t = inRow === 1 ? 0.5 : (k + 0.5) / inRow;
+      const stagger = rows > 1 && j % 2 ? 0.5 / inRow : 0;
+      positions.push(polar(r, innerA + (t + stagger) * (outerA - innerA)));
+    }
+    remaining -= inRow;
+  }
+  return positions;
+}
+
+// --- static radar chrome ----------------------------------------------------
+function drawChrome(svg) {
+  const sectorAngle = 360 / SECTOR_ORDER.length;
+  for (const ring of [...RINGS].reverse()) {
+    el("circle", { cx: CX, cy: CY, r: ring.r1, fill: ring.id === "adopt" ? "#fafafa" : "#fff",
+                   stroke: "#dcdcdc", "stroke-width": 1 }, svg);
+  }
+  for (let i = 0; i < SECTOR_ORDER.length; i++) {
+    const [x, y] = polar(RINGS[3].r1, -90 + i * sectorAngle);
+    el("line", { x1: CX, y1: CY, x2: x, y2: y, stroke: "#e9e9e9", "stroke-width": 1 }, svg);
+  }
+  for (const ring of RINGS) {
+    const label = el("text", { x: CX, y: CY - (ring.r0 + ring.r1) / 2, class: "ring-label" }, svg);
+    label.textContent = ring.label;
+  }
+  for (let i = 0; i < SECTOR_ORDER.length; i++) {
+    const mid = -90 + (i + 0.5) * sectorAngle;
+    const [x, y] = polar(RINGS[3].r1 + 26, mid);
+    const t = el("text", { x, y, class: "sector-label" }, svg);
+    t.textContent = SHORT_TITLES[SECTOR_ORDER[i]];
+  }
+}
+
+// --- data-driven parts --------------------------------------------------------
+function buildBlips(svg) {
+  const sectorAngle = 360 / SECTOR_ORDER.length;
+  const blipLayer = el("g", {}, svg);
+  for (let i = 0; i < SECTOR_ORDER.length; i++) {
+    const a0 = -90 + i * sectorAngle, a1 = a0 + sectorAngle;
+    for (const ring of RINGS) {
+      const group = entries.filter(e => e.layer === SECTOR_ORDER[i] && e.ring === ring.id);
+      const pos = blipPositions(group.length, a0, a1, ring.r0, ring.r1);
+      group.forEach((entry, j) => {
+        const [x, y] = pos[j];
+        const g = el("g", { class: "blip", "data-slug": entry.slug }, blipLayer);
+        el("circle", { cx: x, cy: y, r: 13, fill: ring.color }, g);
+        const t = el("text", { x, y }, g);
+        t.textContent = entry.num;
+        g.addEventListener("click", () => openDetail(entry));
+        g.addEventListener("mouseenter", () => setHot(entry.slug, true));
+        g.addEventListener("mouseleave", () => setHot(entry.slug, false));
+        const title = el("title", {}, g);
+        title.textContent = `${entry.name} — ${ring.label.toLowerCase()}`;
+      });
+    }
+  }
+}
+
+function buildLegend(container) {
+  for (const layerId of SECTOR_ORDER) {
+    const section = document.createElement("section");
+    const h = document.createElement("h2");
+    h.textContent = SHORT_TITLES[layerId];
+    section.appendChild(h);
+    const list = document.createElement("ol");
+    for (const entry of entries.filter(e => e.layer === layerId)) {
+      const li = document.createElement("li");
+      li.dataset.slug = entry.slug;
+      const refCount = (entry.references || []).length;
+      li.innerHTML = `<span class="num">${entry.num}</span>` +
+                     `<span class="dot" style="background:${ringById[entry.ring].color}"></span>` +
+                     `<span>${entry.name}</span>` +
+                     (refCount ? `<span class="ref-mark" title="${refCount} public case stud${refCount > 1 ? "ies" : "y"}">📄 ${refCount}</span>` : "");
+      li.addEventListener("click", () => openDetail(entry));
+      li.addEventListener("mouseenter", () => setHot(entry.slug, true));
+      li.addEventListener("mouseleave", () => setHot(entry.slug, false));
+      list.appendChild(li);
+    }
+    section.appendChild(list);
+    container.appendChild(section);
+  }
+}
+
+function setHot(slug, on) {
+  for (const node of document.querySelectorAll(`[data-slug="${slug}"]`)) node.classList.toggle("hot", on);
+}
+
+// --- filtering ----------------------------------------------------------------
+function matches(entry) {
+  if (!state.rings.has(entry.ring)) return false;
+  if (!state.query) return true;
+  return [entry.name, ...(entry.tags || [])].join(" ").toLowerCase().includes(state.query);
+}
+function applyFilter() {
+  for (const entry of entries) {
+    const dim = !matches(entry);
+    for (const node of document.querySelectorAll(`[data-slug="${entry.slug}"]`)) node.classList.toggle("dim", dim);
+  }
+}
+
+// --- detail panel ---------------------------------------------------------------
+function openDetail(entry) {
+  const ring = ringById[entry.ring];
+  const champions = entry.champions.length ? entry.champions.join(", ") : "—";
+  const tags = (entry.tags || []).map(t => `<span class="tag">${t}</span>`).join("") || "—";
+  const historyHtml = entry.ring_history.map(h =>
+    `<li><b>${h.ring}</b> · ${h.date} — ${h.reason}</li>`).join("");
+  const certs = (entry.certifications || []).length
+    ? `<dt>Certifications</dt><dd><ul class="history">${entry.certifications.map(c => {
+        const holders = (c.holders || []).length ? ` · held by ${c.holders.join(", ")}` : "";
+        return `<li>${c.name}${c.issuer ? ` <span class="soft">(${c.issuer})</span>` : ""}${holders}</li>`;
+      }).join("")}</ul></dd>` : "";
+  const refs = (entry.references || []).length
+    ? `<dt>Public case studies</dt><dd><ul class="history">${entry.references.map(r => {
+        const label = `<b>${r.client}</b> — ${r.title}`;
+        return `<li>${r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${label} ↗</a>` : label}</li>`;
+      }).join("")}</ul></dd>` : "";
+  const articles = (entry.articles || []).length
+    ? `<dt>From our blog</dt><dd><ul class="history">${entry.articles.map(a =>
+        `<li><a href="${a.url}" target="_blank" rel="noopener">${a.title} ↗</a>${a.date ? ` <span class="soft">(${a.date})</span>` : ""}</li>`
+      ).join("")}</ul></dd>` : "";
+  document.getElementById("detail-body").innerHTML = `
+    <h3>${entry.name}</h3>
+    <span class="badge" style="background:${ring.color}">${entry.ring}</span>
+    ${entry.description ? `<p class="desc">${entry.description}</p>` : ""}
+    <dl>
+      <dt>Layer</dt><dd>${SHORT_TITLES[entry.layer]}</dd>
+      <dt>Champions</dt><dd>${champions}</dd>
+      ${refs}
+      ${articles}
+      ${certs}
+      <dt>Ring history</dt><dd><ul class="history">${historyHtml}</ul></dd>
+      <dt>On the radar since</dt><dd>${entry.since}</dd>
+      <dt>Tags</dt><dd>${tags}</dd>
+    </dl>
+    <a class="gh" href="${REPO_URL}/blob/main/${entry.path}" target="_blank" rel="noopener">Open full entry ↗</a>`;
+  document.body.classList.add("detail-open");
+  history.replaceState(null, "", `#${entry.slug}`);
+}
+function closeDetail() {
+  document.body.classList.remove("detail-open");
+  history.replaceState(null, "", location.pathname + location.search);
+}
+document.getElementById("overlay").addEventListener("click", closeDetail);
+document.querySelector("#detail .close").addEventListener("click", closeDetail);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeDetail(); });
+
+// --- controls -----------------------------------------------------------------
+const controls = document.getElementById("controls");
+const searchInput = document.getElementById("search");
+for (const ring of RINGS) {
+  const label = document.createElement("label");
+  label.className = "ring-toggle";
+  label.style.setProperty("--c", ring.color);
+  label.innerHTML = `<input type="checkbox" checked><span class="swatch"></span>${ring.label}`;
+  label.querySelector("input").addEventListener("change", e => {
+    e.target.checked ? state.rings.add(ring.id) : state.rings.delete(ring.id);
+    label.classList.toggle("off", !e.target.checked);
+    applyFilter();
+  });
+  controls.insertBefore(label, searchInput);
+}
+searchInput.addEventListener("input", () => { state.query = searchInput.value.trim().toLowerCase(); applyFilter(); });
+
+// --- boot -----------------------------------------------------------------------
+fetch("radar.json")
+  .then(r => { if (!r.ok) throw new Error(r.statusText); return r.json(); })
+  .then(data => {
+    // number entries by layer order, then ring rank, then name — legend and blips share it
+    entries = SECTOR_ORDER.flatMap(layerId =>
+      data.entries
+        .filter(e => e.layer === layerId)
+        .sort((a, b) => ringRank[a.ring] - ringRank[b.ring] || a.name.localeCompare(b.name))
+    ).map((e, i) => ({ ...e, num: i + 1 }));
+    const svg = document.getElementById("radar");
+    drawChrome(svg);
+    buildBlips(svg);
+    buildLegend(document.getElementById("legend"));
+    const linked = entries.find(e => e.slug === decodeURIComponent(location.hash.slice(1)));
+    if (linked) openDetail(linked);
+  })
+  .catch(() => {
+    document.querySelector(".layout").innerHTML =
+      '<p style="color:var(--muted)">radar.json not found — run <code>python3 scripts/build_radar_json.py</code> first.</p>';
+  });
+</script>
+</body>
+</html>
