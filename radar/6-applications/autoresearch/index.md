@@ -3,7 +3,7 @@ name: autoresearch
 layer: 6-applications
 ring: assess
 tags: [agents, research, patterns]
-champions: []
+champions: [phillip]
 since: 2026-06
 ring_history:
   - { ring: assess, date: 2026-06, reason: "Initial radar import — pattern reference for research agents" }

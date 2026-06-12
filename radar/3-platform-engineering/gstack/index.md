@@ -3,7 +3,7 @@ name: gstack
 layer: 3-platform-engineering
 ring: assess
 tags: [claude-code, dev-environment, tooling]
-champions: []
+champions: [phillip]
 since: 2026-06
 ring_history:
   - { ring: assess, date: 2026-06, reason: "Initial radar import — reference setup, not yet standardized" }

@@ -3,7 +3,7 @@ name: SonarQube MCP Server
 layer: 5-orchestration
 ring: assess
 tags: [mcp, code-quality, devsecops]
-champions: []
+champions: [christoph.gotschlich]
 since: 2026-06
 ring_history:
   - { ring: assess, date: 2026-06, reason: "Initial radar import — promising registry candidate, limited usage so far" }

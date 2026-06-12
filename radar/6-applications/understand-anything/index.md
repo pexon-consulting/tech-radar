@@ -3,7 +3,7 @@ name: Understand-Anything
 layer: 6-applications
 ring: assess
 tags: [code-analysis, legacy, discovery]
-champions: []
+champions: [christoph.gotschlich]
 since: 2026-06
 ring_history:
   - { ring: assess, date: 2026-06, reason: "Initial radar import — discovery-phase tool, not a runtime dependency" }

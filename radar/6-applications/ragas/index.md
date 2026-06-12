@@ -3,7 +3,7 @@ name: RAGAS
 layer: 6-applications
 ring: trial
 tags: [evaluation, rag, quality]
-champions: []
+champions: [christoph.gotschlich]
 since: 2026-06
 ring_history:
   - { ring: trial, date: 2026-06, reason: "Initial radar import — used in pilot acceptance criteria" }

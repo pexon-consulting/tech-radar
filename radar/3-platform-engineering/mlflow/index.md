@@ -3,7 +3,7 @@ name: MLflow
 layer: 3-platform-engineering
 ring: adopt
 tags: [mlops, experiment-tracking, model-registry]
-champions: []
+champions: [christoph.gotschlich]
 since: 2026-06
 ring_history:
   - { ring: adopt, date: 2026-06, reason: "Initial radar import — central MLOps backbone across projects" }

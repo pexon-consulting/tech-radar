@@ -3,7 +3,7 @@ name: UQLM
 layer: 6-applications
 ring: assess
 tags: [uncertainty, evaluation, regulated-industries]
-champions: []
+champions: [christoph.gotschlich]
 since: 2026-06
 ring_history:
   - { ring: assess, date: 2026-06, reason: "Initial radar import — evaluating for regulated-industry RAG outputs" }
